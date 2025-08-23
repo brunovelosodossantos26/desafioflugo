@@ -1,13 +1,8 @@
-import Sidebar from "./components/Sidebar";
+import { RouterProvider } from "react-router";
+import { router } from "./routes/routes";
 
 function App() {
-  return (
-    <div className="h-screen bg-white">
-      <div className="h-[100%] flex">
-        <Sidebar />
-      </div>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
