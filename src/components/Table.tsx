@@ -10,31 +10,30 @@ import TableSortLabel from "@mui/material/TableSortLabel";
 import Button from "./Button";
 import Avatar from "@mui/material/Avatar";
 import { Link } from "react-router";
+import AvatarTop from "./AvatarTop";
 
 interface Data {
   name: string;
   email: string;
-  fat: number;
-  carbs: number;
+  departamento: string;
   status: string;
 }
 
 function createData(
   name: string,
   email: string,
-  fat: number,
-  carbs: number,
+  departamento: string,
   status: string
 ): Data {
-  return { name, email, fat, carbs, status };
+  return { name, email, departamento, status };
 }
 
 const rows = [
-  createData("Frozen yoghurt", "brvelosoo@gmail.com", 6.0, 24, "Ativo"),
-  createData("Ice cream sandwich", "rosalia@gmail.com", 9.0, 37, "Ativo"),
-  createData("Eclair", "leandro@gmail.com", 16.0, 24, "Ativo"),
-  createData("Cupcake", "miguel@gmail.com", 3.7, 67, "Ativo"),
-  createData("Gingerbread", "gabi@gmail.com", 16.0, 49, "Ativo"),
+  createData("Frozen yoghurt", "brvelosoo@gmail.com", "Design", "Ativo"),
+  createData("Ice cream sandwich", "rosalia@gmail.com", "TI", "Ativo"),
+  createData("Eclair", "leandro@gmail.com", "Marketing", "Ativo"),
+  createData("Cupcake", "miguel@gmail.com", "Design", "Ativo"),
+  createData("Gingerbread", "gabi@gmail.com", "Produto", "Inativo"),
 ];
 
 export default function DataTable() {
@@ -60,19 +59,23 @@ export default function DataTable() {
   }[] = [
     { id: "name", label: "Nome", align: "left" },
     { id: "email", label: "Email", align: "left" },
-    { id: "fat", label: "Fat (g)", align: "right" },
-    { id: "carbs", label: "Carbs (g)", align: "right" },
+    { id: "departamento", label: "Departamento", align: "left" },
     { id: "status", label: "Status", align: "right" },
   ];
 
   return (
     <div className="h-[400px] w-[90%] mx-auto">
+      <div className="pb-4 flex justify-end">
+        <AvatarTop />
+      </div>
+
       <div className="pb-8 flex items-center justify-between">
         <h1 className="text-[24px] text-[#212B36] font-bold">Colaboradores</h1>
         <Link to="/Basics">
           <Button text="Novo Colaborador" />
         </Link>
       </div>
+
       <TableContainer component={Paper} className="shadow-lg rounded-lg ">
         <Table className="min-w-full">
           <TableHead className="bg-[#F4F6F8] text-white font-sans text-[14px]">
@@ -106,8 +109,7 @@ export default function DataTable() {
                   {row.name}
                 </TableCell>
                 <TableCell align="left">{row.email}</TableCell>
-                <TableCell align="left">{row.fat}</TableCell>
-                <TableCell align="left">{row.carbs}</TableCell>
+                <TableCell align="left">{row.departamento}</TableCell>
                 <TableCell align="right">{row.status}</TableCell>
               </TableRow>
             ))}
