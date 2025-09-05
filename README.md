@@ -1,69 +1,89 @@
-# React + TypeScript + Vite
+# 🚀 Desafio Flugo - Dashboard React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![React](https://img.shields.io/badge/React-18.0-61dafb?logo=react&logoColor=white)](https://react.dev/) 
+[![TypeScript](https://img.shields.io/badge/TypeScript-4.9-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/) 
+[![Material-UI](https://img.shields.io/badge/MUI-5.0-007FFF?logo=mui&logoColor=white)](https://mui.com/) 
+[![Firebase](https://img.shields.io/badge/Firebase-9.0-FFCA28?logo=firebase&logoColor=black)](https://firebase.google.com/) 
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 💡 Sobre o Projeto
 
-## Expanding the ESLint configuration
+Este projeto foi desenvolvido como parte do **desafio técnico da Flugo**.  
+O objetivo foi construir um **dashboard responsivo** com **React, TypeScript, Material UI e Firebase**, incluindo:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Sidebar responsiva (menu hamburguer no mobile)  
+- Navegação entre etapas com **Stepper**  
+- Formulários validados com feedback de erro  
+- Integração com Firebase para armazenamento/autenticação  
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 📸 Demonstração
+ 
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+![Screenshot Desktop](./screenshots/tela1.png)  
+![Screenshot Mobile](./screenshots/tela2.png)  
+
+---
+
+## ⚙️ Funcionalidades
+
+- 📱 **Layout Responsivo** (sidebar lateral + menu hamburguer no mobile)  
+- 🧭 **Stepper** para controle de progresso  
+- 📝 **Validação de formulários** (campos obrigatórios e email válido)  
+- 🔘 Componentes customizados: Botões, Switches, Progress Bar  
+- 🔥 **Integração com Firebase** (Auth, Firestore, Storage)  
+- 🌐 Navegação entre páginas com **React Router**  
+
+---
+
+## 🚀 Como Rodar o Projeto
+
+### 1. Clone o repositório
+```bash
+git clone https://github.com/seu-usuario/nome-do-projeto.git
+cd nome-do-projeto
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 2. Instale as dependências
+```bash
+npm install
 ```
+### 3. Configure o Firebase
+Crie um projeto no Firebase Console e adicione suas credenciais no arquivo src/server/firebase.ts:
+```bash
+export const firebaseConfig = {
+  apiKey: "SUA_API_KEY",
+  authDomain: "SEU_AUTH_DOMAIN",
+  projectId: "SEU_PROJECT_ID",
+  storageBucket: "SEU_STORAGE_BUCKET",
+  messagingSenderId: "SEU_MESSAGING_SENDER_ID",
+  appId: "SEU_APP_ID",
+};
+```
+
+### 4. Inicie o servidor de desenvolvimento
+```bash
+npm run dev
+```
+---
+### 🔧 Tecnologias Utilizadas
+
+- **React** – Biblioteca para construção de interfaces
+
+- **TypeScript** – Superset do JavaScript com tipagem estática
+
+- **Material UI (MUI)** – Framework de componentes UI
+
+- **Firebase** – Backend-as-a-Service (Auth, Firestore, Storage)
+
+- **React Router** – Navegação entre páginas
+  
+---
+👤 Autor
+
+Desenvolvido por **Bruno Veloso** ✨</br>
+🔗 [LinkedIn](https://www.linkedin.com/in/brunovelosoo/)</br>
+ 💻 [GitHub](https://github.com/brunovelosodossantos26)
