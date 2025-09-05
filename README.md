@@ -69,6 +69,26 @@ export const firebaseConfig = {
 npm run dev
 ```
 ---
+## 🌐 Demo Online
+
+O projeto está hospedado no Vercel e você pode testar a aplicação diretamente no navegador:
+
+[🔗 Teste o projeto aqui](https://desafioflugo.vercel.app/)
+
+> ⚡ Nota: Esta é a versão de teste do desafio Flugo. Alguns recursos podem depender de dados em tempo real do Firebase.
+
+---
+
+### Sobre a Vercel
+
+[Vercel](https://vercel.com/) é uma plataforma de **deploy e hospedagem de aplicações web**, otimizada para projetos front-end como **React**, **Next.js**, **Vue** e outras frameworks modernas.  
+
+Principais vantagens da Vercel:  
+- Deploy rápido e fácil diretamente do **GitHub**, **GitLab** ou **Bitbucket**  
+- Criação automática de **preview deployments** para cada pull request  
+- CDN global integrada para **carregamento rápido** de páginas  
+- Suporte a **Serverless Functions** para back-end leve  
+- Fácil integração com **variáveis de ambiente** e APIs externas  
 ### 🔧 Tecnologias Utilizadas
 
 - **React** – Biblioteca para construção de interfaces
