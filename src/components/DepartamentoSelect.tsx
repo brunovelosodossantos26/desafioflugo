@@ -1,43 +1,49 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import InputLabel from "@mui/material/InputLabel";
+import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import type { SelectChangeEvent } from "@mui/material/Select";
 
-export default function DepartamentoSelect() {
-  const [departamento, setDepartamento] = React.useState("");
+type DepartamentoSelectProps = {
+  value: string;
+  onChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
+  error?: boolean;
+  helperText?: string;
+};
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setDepartamento(event.target.value as string);
-  };
-
+export default function DepartamentoSelect({
+  value,
+  onChange,
+  error,
+  helperText,
+}: DepartamentoSelectProps) {
   return (
-    <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">
-          Selecione um departamento
-        </InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={departamento}
-          onChange={handleChange}
-          input={<OutlinedInput label="Selecione um departamento" />}
-          sx={{
-            "& .MuiOutlinedInput-notchedOutline": {
-              borderRadius: "12px",
-            },
-          }}
-        >
-          <MenuItem value={10}>Design</MenuItem>
-          <MenuItem value={20}>Marketing</MenuItem>
-          <MenuItem value={30}>Produto</MenuItem>
-          <MenuItem value={30}>TI</MenuItem>
-        </Select>
-      </FormControl>
-    </Box>
+    <TextField
+      select
+      label="Selecione um departamento"
+      value={value}
+      onChange={onChange}
+      error={error}
+      helperText={helperText}
+      fullWidth
+      sx={{
+        "& label": { color: "#225" },
+        "& label.Mui-focused": { color: "#22c55e" },
+        "& .MuiOutlinedInput-root": {
+          "& fieldset": { borderColor: "#22c55e" },
+          "&:hover fieldset": { borderColor: "#16a34a" },
+          "&.Mui-focused fieldset": { borderColor: "#22c55e" },
+          "& .MuiOutlinedInput-notchedOutline": {
+            borderRadius: "12px",
+          },
+        },
+      }}
+    >
+      <MenuItem value="TI">Tecnologia da Informação</MenuItem>
+      <MenuItem value="Produto">Produto</MenuItem>
+      <MenuItem value="Design">Design</MenuItem>
+      <MenuItem value="Marketing">Marketing</MenuItem>
+      <MenuItem value="Recursos Humanos">Recursos Humanos</MenuItem>
+      <MenuItem value="Administração">Administração</MenuItem>
+    </TextField>
   );
 }

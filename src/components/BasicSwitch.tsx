@@ -31,18 +31,27 @@ const IOSSwitch = styled(Switch)(() => ({
     opacity: 1,
   },
 }));
-export default function BasicSwitch() {
+
+type BasicSwitchProps = {
+  checked: boolean;
+  onChange: (checked: boolean) => void;
+};
+
+export default function BasicSwitch({ checked, onChange }: BasicSwitchProps) {
   return (
-    <>
-      <FormControlLabel
-        control={<IOSSwitch defaultChecked />}
-        label=" Ativar ao criar"
-        sx={{
-          "& .MuiFormControlLabel-label": {
-            marginLeft: 2,
-          },
-        }}
-      />
-    </>
+    <FormControlLabel
+      control={
+        <IOSSwitch
+          checked={checked}
+          onChange={(e) => onChange(e.target.checked)}
+        />
+      }
+      label="Ativar ao criar"
+      sx={{
+        "& .MuiFormControlLabel-label": {
+          marginLeft: 2,
+        },
+      }}
+    />
   );
 }

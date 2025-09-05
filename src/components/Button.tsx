@@ -1,17 +1,17 @@
 interface ButtonProps {
   text: string;
   onClick?: () => void;
-  bgColor?: string; // cor de fundo padrão
-  hoverColor?: string; // cor de fundo quando hover
-  textColor?: string; // cor do texto
+  bgColor?: string;
+  hoverColor?: string;
+  textColor?: string;
 }
 
 export default function Button({
   text,
   onClick,
-  bgColor = "#22c55e", // verde (equivalente a bg-green-500)
-  hoverColor = "#16a34a", // verde escuro (equivalente a bg-green-600)
-  textColor = "#ffffff", // branco por padrão
+  bgColor = "#22c55e",
+  hoverColor = "#16a34a",
+  textColor = "#ffffff",
 }: ButtonProps) {
   return (
     <button

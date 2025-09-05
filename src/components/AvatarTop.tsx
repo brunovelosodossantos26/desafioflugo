@@ -7,7 +7,6 @@ interface AvatarTopProps {
 }
 
 export default function AvatarTop({ name, email }: AvatarTopProps) {
-  // sempre usa a imagem local
   const avatarUrl = userP;
 
   return (
