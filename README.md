@@ -43,8 +43,8 @@ O objetivo foi construir um **dashboard responsivo** com **React, TypeScript, Ma
 
 ### 1. Clone o repositório
 ```bash
-git clone https://github.com/seu-usuario/nome-do-projeto.git
-cd nome-do-projeto
+git clone https://github.com/brunovelosodossantos26/desafioflugo.git
+cd desafioflugo
 ```
 
 ### 2. Instale as dependências
